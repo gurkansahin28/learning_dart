@@ -1,6 +1,16 @@
 //---CONSTRUCTORS-----
 
 void main() {
+  doHeaderMain(title: 'A very simple constructor');
+  print("""
+class Simple {
+  Simple() {
+    print('A very simple constructor was created!');
+  }
+}
+""");
+  Simple();
+  //--------------------------------------------------------------------------
   doHeaderMain(title: 'a very basic constructor');
   print("""
 class One {
@@ -103,6 +113,14 @@ class Me {
 }
 
 /********************* The End of Main ********************************** */
+//---very simple contructor
+class Simple {
+  Simple() {
+    print('A very simple constructor was created!');
+  }
+}
+
+//----------------------------------------------------------------------------
 //---using a very basic constructor
 class One {
   String name = 'gurkan';
