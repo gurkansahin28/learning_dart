@@ -31,6 +31,18 @@ void main() {
   DoSthWithNamedParamsFullOptValues(
       name: 'Delifirca', age: 155, message: 'Look to yourself better!');
   //---12.
+  Map<String, dynamic> aFewValues = {
+    'name': 'Gurkan',
+    'surname': 'Sahin',
+    'age': 55
+  };
+  DoSthWithMappedValues doSthWithMappedValues =
+      DoSthWithMappedValues(aFewValues);
+  print(doSthWithMappedValues.getInfo());
+
+  DoSthWithRequiredValues doSthWithRequiredValues =
+      DoSthWithRequiredValues(name: 'Gurkan', age: 55, isLazzy: true);
+  doSthWithRequiredValues.displayInfo();
 }
 
 /**The End of MAIN******************************************************** */
@@ -113,4 +125,25 @@ class DoSthWithNamedParamsFullOptValues {
   }
 }
 
-//---12.
+//---12. A class constructor getting map returning list
+class DoSthWithMappedValues {
+  Map<dynamic, dynamic> valuesMap;
+
+  DoSthWithMappedValues(this.valuesMap);
+
+  List getInfo() {
+    return valuesMap.entries.toList();
+  }
+}
+
+//---13. A class constructor requiring the variables
+class DoSthWithRequiredValues {
+  String name;
+  int age;
+  bool isLazzy;
+  DoSthWithRequiredValues(
+      {required this.name, required this.age, required this.isLazzy});
+  void displayInfo() {
+    print('Hello $name! You are $age and are you lazzy: $isLazzy');
+  }
+}
